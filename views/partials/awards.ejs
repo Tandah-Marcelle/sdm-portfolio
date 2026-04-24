@@ -1,0 +1,64 @@
+<section id="awards" class="py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+
+        <div class="reveal text-center mb-24">
+            <p class="mono text-amber-500 font-bold tracking-[0.3em] uppercase text-sm mb-4">Recognition</p>
+            <h2 class="text-6xl font-extrabold text-white tracking-tighter italic">Distinctions & Honours.</h2>
+            <p class="text-slate-500 mt-4 text-lg">National and international recognition for engineering excellence.</p>
+        </div>
+
+        <div class="space-y-12">
+            <% awards.forEach((award, i) => { %>
+            <%
+                const isEven = i % 2 === 0;
+            %>
+            <div class="reveal group">
+                <div class="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-800 hover:border-amber-500/30 transition-all duration-500 shadow-xl bg-slate-900/40 <%= isEven ? '' : 'md:[direction:rtl]' %>">
+
+                    <!-- Image side -->
+                    <div class="relative overflow-hidden min-h-[280px] md:[direction:ltr]">
+                        <% if (award.image && award.image !== '') { %>
+                        <img src="<%= award.image %>" alt="<%= award.title %>"
+                            class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <% } else { %>
+                        <!-- Placeholder when no image -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 flex items-center justify-center">
+                            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#f59e0b 1px, transparent 1px); background-size: 28px 28px;"></div>
+                            <span class="mono text-amber-500/20 font-extrabold text-[120px] leading-none select-none">/0<%= i + 1 %></span>
+                        </div>
+                        <% } %>
+                        <div class="absolute inset-0 bg-gradient-to-r <%= isEven ? 'from-transparent to-slate-900/80' : 'from-slate-900/80 to-transparent' %>"></div>
+
+                        <!-- Number badge -->
+                        <div class="absolute top-6 <%= isEven ? 'left-6' : 'right-6' %> z-10">
+                            <span class="mono text-2xl font-extrabold text-amber-500/40 group-hover:text-amber-500/70 transition-colors">/0<%= i + 1 %></span>
+                        </div>
+                    </div>
+
+                    <!-- Content side -->
+                    <div class="p-10 md:p-12 flex flex-col justify-center md:[direction:ltr]">
+                        <div class="mb-3">
+                            <span class="mono text-xs font-bold uppercase tracking-[0.3em] text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3 py-1.5 rounded-full">
+                                <%= award.year %>
+                            </span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug mb-4">
+                            <%= award.title %>
+                        </h3>
+                        <p class="text-base font-bold text-amber-500/70 uppercase tracking-widest mb-5 mono">
+                            <%= award.organization %>
+                        </p>
+                        <% if (award.description) { %>
+                        <p class="text-slate-400 text-lg leading-relaxed">
+                            <%= award.description %>
+                        </p>
+                        <% } %>
+                    </div>
+
+                </div>
+            </div>
+            <% }) %>
+        </div>
+
+    </div>
+</section>

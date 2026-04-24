@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Profile {
+  id         Int    @id @default(autoincrement())
+  name       String @default("Manuel Songfack Dongmo")
+  title      String @default("Electromechanical Engineer · Industry 4.0 Specialist")
+  bio        String @default("")
+  bio2       String @default("")
+  photo      String @default("")
+  specialty1 String @default("Machine Design & CNC Optimization")
+  specialty2 String @default("Embedded Firmware & Microelectronics")
+  specialty3 String @default("SolidWorks · 3DExperience · CAD/CAM")
+  specialty4 String @default("Robotics · Computer Vision · IoT")
+  yearsExp   String @default("6+")
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  image       String
+  tags        String   // Stored as semicolon-separated string
+  details     String
+  createdAt   DateTime @default(now())
+}
+
+model Award {
+  id           Int      @id @default(autoincrement())
+  title        String
+  organization String
+  year         String
+  description  String
+  image        String   @default("")
+  createdAt    DateTime @default(now())
+}
+
+model Certification {
+  id          Int      @id @default(autoincrement())
+  name        String
+  issuer      String
+  year        String
+  badge       String
+  image       String   @default("")
+  description String   @default("")
+  createdAt   DateTime @default(now())
+}

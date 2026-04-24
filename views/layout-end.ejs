@@ -1,0 +1,81 @@
+    <footer id="contact" class="bg-black border-t border-slate-900 pt-32 pb-12 mt-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-16 mb-20">
+                <div class="md:col-span-1">
+                    <p class="text-4xl font-extrabold text-white tracking-tighter mb-4">Let's build<br/>the future<span class="text-amber-500">.</span></p>
+                    <p class="text-slate-500 leading-relaxed text-sm">Open to collaborations, consulting engagements, and high-impact engineering projects worldwide.</p>
+                </div>
+                <div>
+                    <p class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-600 mb-6">Direct Contact</p>
+                    <div class="space-y-4">
+                        <a href="mailto:manueldongmo@gmail.com" class="flex items-center space-x-3 text-slate-400 hover:text-amber-500 transition-colors group">
+                            <span class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center group-hover:border-amber-500 transition-colors text-xs">@</span>
+                            <span class="text-sm font-medium">manueldongmo@gmail.com</span>
+                        </a>
+                        <a href="https://wa.me/237683249666" target="_blank" class="flex items-center space-x-3 text-slate-400 hover:text-amber-500 transition-colors group">
+                            <span class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center group-hover:border-amber-500 transition-colors text-xs">WA</span>
+                            <span class="text-sm font-medium">+237 683 249 666</span>
+                        </a>
+                        <div class="flex items-center space-x-3 text-slate-600">
+                            <span class="w-8 h-8 rounded-full border border-slate-900 flex items-center justify-center text-xs">📍</span>
+                            <span class="text-sm font-medium">Yaoundé, Cameroon</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-600 mb-6">Professional Networks</p>
+                    <div class="space-y-4">
+                        <a href="https://shorturl.at/p2jvI" target="_blank" class="flex items-center space-x-3 text-slate-400 hover:text-amber-500 transition-colors group">
+                            <span class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center group-hover:border-amber-500 transition-colors text-xs font-bold">in</span>
+                            <span class="text-sm font-medium">LinkedIn Profile</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-slate-600 cursor-not-allowed">
+                            <span class="w-8 h-8 rounded-full border border-slate-900 flex items-center justify-center text-xs font-bold">GH</span>
+                            <span class="text-sm font-medium">GitHub (Coming Soon)</span>
+                        </a>
+                    </div>
+                    <div class="mt-8">
+                        <a href="mailto:manueldongmo@gmail.com"
+                            class="inline-block bg-amber-500 text-black px-8 py-4 rounded-full font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-lg shadow-amber-500/20">
+                            Request CV / Catalog
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-slate-700 font-bold">
+                <p>&copy; 2025 Manuel Songfack Dongmo — All Rights Reserved</p>
+                <p class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 pulse-dot inline-block"></span>
+                    Available for Opportunities
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+
+        // Skill bars
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+                        bar.style.width = bar.dataset.width;
+                    });
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.skills-section').forEach(el => skillObserver.observe(el));
+    </script>
+</body>
+</html>

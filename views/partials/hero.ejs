@@ -1,0 +1,66 @@
+<section class="min-h-[92vh] flex flex-col justify-center px-6 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style="background-image: radial-gradient(#f59e0b 1px, transparent 1px); background-size: 48px 48px;"></div>
+    <div class="absolute top-0 right-0 h-full w-[45%] pointer-events-none">
+        <img src="/images/bg1.png" alt="" class="w-full h-full object-cover object-left opacity-20"
+            style="mask-image: linear-gradient(to right, transparent 0%, black 40%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);">
+        <div class="absolute inset-0" style="background: linear-gradient(to right, #020617 0%, transparent 35%, transparent 100%);"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10">
+
+        <!-- Main text -->
+        <div class="max-w-3xl">
+            <p class="mono text-amber-500 font-bold tracking-[0.35em] uppercase text-xs mb-6 accent-glow">
+                Electromechanical Engineer · Industry 4.0 Specialist
+            </p>
+            <h1 class="text-7xl md:text-[110px] font-extrabold text-white tracking-tighter leading-[0.85] mb-8">
+                Manuel<br/>Dongmo<span class="text-amber-500">.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed">
+                Designing intelligent machines at the intersection of
+                <span class="text-white font-semibold italic">Mechatronics</span>,
+                <span class="text-white font-semibold italic">Embedded Systems</span>, and
+                <span class="text-white font-semibold italic">Smart Manufacturing</span>.
+            </p>
+            <div class="mt-10 flex flex-wrap gap-5 items-center">
+                <a href="#projects"
+                    class="bg-amber-500 text-black px-10 py-5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-lg shadow-amber-500/20">
+                    View Case Studies
+                </a>
+                <a href="#contact"
+                    class="border border-slate-700 text-slate-300 px-10 py-5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:border-amber-500 hover:text-amber-500 transition-all">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="mt-20 grid grid-cols-3 max-w-2xl">
+            <!-- Stat 1 -->
+            <div class="pr-10 border-r border-slate-800">
+                <div class="w-8 h-0.5 bg-amber-500 mb-4"></div>
+                <p class="text-6xl font-extrabold text-white tracking-tighter leading-none mb-2"><%= profile.yearsExp %></p>
+                <p class="mono text-xs font-bold text-slate-500 uppercase tracking-[0.2em]">Years<br/>Experience</p>
+            </div>
+            <!-- Stat 2 -->
+            <div class="px-10 border-r border-slate-800">
+                <div class="w-8 h-0.5 bg-amber-500 mb-4"></div>
+                <p class="text-6xl font-extrabold text-white tracking-tighter leading-none mb-2"><%= projects.length %>+</p>
+                <p class="mono text-xs font-bold text-slate-500 uppercase tracking-[0.2em]">Engineering<br/>Projects</p>
+            </div>
+            <!-- Stat 3 -->
+            <div class="pl-10">
+                <div class="w-8 h-0.5 bg-amber-500 mb-4"></div>
+                <p class="text-6xl font-extrabold text-white tracking-tighter leading-none mb-2"><%= awards.length %></p>
+                <p class="mono text-xs font-bold text-slate-500 uppercase tracking-[0.2em]">National<br/>Awards</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-700">
+        <p class="mono text-[9px] uppercase tracking-[0.4em]">Scroll</p>
+        <div class="w-px h-12 bg-gradient-to-b from-slate-700 to-transparent"></div>
+    </div>
+</section>
