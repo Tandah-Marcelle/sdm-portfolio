@@ -6,49 +6,75 @@
             <h2 class="text-5xl font-extrabold tracking-tighter" style="color:var(--text)">Core Competencies.</h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-16">
+        <!-- Two category columns -->
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
 
+            <!-- Engineering & Design -->
             <div class="reveal">
-                <p class="mono text-sm font-bold uppercase tracking-[0.3em] mb-8 accent-green">Engineering & Design</p>
-                <div class="space-y-7">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:var(--green)">
+                        <svg class="w-4 h-4" fill="none" stroke="#fff" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <p class="mono text-base font-bold uppercase tracking-[0.3em] accent-green">Engineering & Design</p>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
                     <% [
-                        { name: 'SolidWorks / CAD Modeling', pct: 95 },
-                        { name: 'Machine Design & Mechanisms', pct: 90 },
-                        { name: 'Thermal & Fluid Systems', pct: 80 },
-                        { name: 'CNC Machining & Fabrication', pct: 85 },
-                        { name: '3D Printing & Rapid Prototyping', pct: 92 }
+                        { name: 'SolidWorks / CAD Modeling',        level: 'Expert' },
+                        { name: 'Machine Design & Mechanisms',       level: 'Expert' },
+                        { name: 'Thermal & Fluid Systems',           level: 'Advanced' },
+                        { name: 'CNC Machining & Fabrication',       level: 'Advanced' },
+                        { name: '3D Printing & Rapid Prototyping',   level: 'Expert' }
                     ].forEach(skill => { %>
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-semibold" style="color:var(--text-2)"><%= skill.name %></span>
-                            <span class="mono text-lg font-bold accent-green"><%= skill.pct %>%</span>
+                    <div class="flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300 group"
+                        style="background:var(--bg-card); border:1px solid var(--border)"
+                        onmouseover="this.style.borderColor='var(--green)'; this.style.background='var(--bg-card-2)'"
+                        onmouseout="this.style.borderColor='var(--border)'; this.style.background='var(--bg-card)'">
+                        <div class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full shrink-0" style="background:var(--green)"></span>
+                            <span class="text-lg font-semibold" style="color:var(--text)"><%= skill.name %></span>
                         </div>
-                        <div class="h-3 rounded-full overflow-hidden" style="background:var(--bg-card-2)">
-                            <div class="skill-bar-fill h-full rounded-full skill-bar-green" data-width="<%= skill.pct %>%"></div>
-                        </div>
+                        <span class="mono text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full shrink-0"
+                            style="color:var(--green); background:rgba(2,138,15,0.1); border:1px solid rgba(2,138,15,0.25)">
+                            <%= skill.level %>
+                        </span>
                     </div>
                     <% }) %>
                 </div>
             </div>
 
+            <!-- Electronics & Software -->
             <div class="reveal">
-                <p class="mono text-sm font-bold uppercase tracking-[0.3em] mb-8 accent-blue">Electronics & Software</p>
-                <div class="space-y-7">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:var(--blue)">
+                        <svg class="w-4 h-4" fill="none" stroke="#fff" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+                        </svg>
+                    </div>
+                    <p class="mono text-base font-bold uppercase tracking-[0.3em] accent-blue">Electronics & Software</p>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
                     <% [
-                        { name: 'Embedded C / C++ (Arduino, STM32)', pct: 88 },
-                        { name: 'Python (Computer Vision, Automation)', pct: 82 },
-                        { name: 'PLC Programming (Ladder / FBD)', pct: 78 },
-                        { name: 'PCB Design & Electronics', pct: 75 },
-                        { name: 'GRBL / G-Code / Motion Control', pct: 85 }
+                        { name: 'Embedded C / C++ (Arduino, STM32)',         level: 'Advanced' },
+                        { name: 'Python (Computer Vision, Automation)',       level: 'Advanced' },
+                        { name: 'PLC Programming (Ladder / FBD)',             level: 'Proficient' },
+                        { name: 'PCB Design & Electronics',                  level: 'Proficient' },
+                        { name: 'GRBL / G-Code / Motion Control',            level: 'Advanced' }
                     ].forEach(skill => { %>
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-semibold" style="color:var(--text-2)"><%= skill.name %></span>
-                            <span class="mono text-lg font-bold accent-blue"><%= skill.pct %>%</span>
+                    <div class="flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300 group"
+                        style="background:var(--bg-card); border:1px solid var(--border)"
+                        onmouseover="this.style.borderColor='var(--blue)'; this.style.background='var(--bg-card-2)'"
+                        onmouseout="this.style.borderColor='var(--border)'; this.style.background='var(--bg-card)'">
+                        <div class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full shrink-0" style="background:var(--blue)"></span>
+                            <span class="text-lg font-semibold" style="color:var(--text)"><%= skill.name %></span>
                         </div>
-                        <div class="h-3 rounded-full overflow-hidden" style="background:var(--bg-card-2)">
-                            <div class="skill-bar-fill h-full rounded-full skill-bar-blue" data-width="<%= skill.pct %>%"></div>
-                        </div>
+                        <span class="mono text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full shrink-0"
+                            style="color:var(--blue); background:rgba(2,132,199,0.1); border:1px solid rgba(2,132,199,0.25)">
+                            <%= skill.level %>
+                        </span>
                     </div>
                     <% }) %>
                 </div>
@@ -56,11 +82,12 @@
 
         </div>
 
-        <div class="reveal mt-20 pt-16" style="border-top:1px solid var(--border)">
+        <!-- Tools & Technologies -->
+        <div class="reveal pt-16" style="border-top:1px solid var(--border)">
             <p class="mono text-sm font-bold uppercase tracking-[0.3em] mb-8 text-center" style="color:var(--text-3)">Tools & Technologies</p>
             <div class="flex flex-wrap justify-center gap-3">
-                <% ['SolidWorks','CATIA','3DExperience','AutoCAD','Arduino','STM32','Raspberry Pi','Python','C++','GRBL','PLC','OpenCV','MATLAB','Fusion 360','KiCad','Marlin Firmware'].forEach((tech, i) => { %>
-                <span class="mono text-sm font-bold uppercase tracking-widest px-5 py-3 rounded-lg transition-all cursor-default"
+                <% ['SolidWorks','CATIA','3DExperience','AutoCAD','Arduino','STM32','Raspberry Pi','Python','C++','GRBL','PLC','OpenCV','MATLAB','Fusion 360','KiCad','Marlin Firmware'].forEach(tech => { %>
+                <span class="mono text-sm font-bold uppercase tracking-widest px-5 py-3 rounded-lg transition-all duration-200 cursor-default"
                     style="color:var(--text-2); background:var(--bg-card); border:1px solid var(--border)"
                     onmouseover="this.style.background='var(--green)'; this.style.color='#fff'; this.style.borderColor='var(--green)'"
                     onmouseout="this.style.background='var(--bg-card)'; this.style.color='var(--text-2)'; this.style.borderColor='var(--border)'">
