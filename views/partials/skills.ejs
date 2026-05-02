@@ -62,8 +62,8 @@
                 <% ['SolidWorks','CATIA','3DExperience','AutoCAD','Arduino','STM32','Raspberry Pi','Python','C++','GRBL','PLC','OpenCV','MATLAB','Fusion 360','KiCad','Marlin Firmware'].forEach((tech, i) => { %>
                 <span class="mono text-sm font-bold uppercase tracking-widest px-5 py-3 rounded-lg transition-all cursor-default"
                     style="color:var(--text-2); background:var(--bg-card); border:1px solid var(--border)"
-                    onmouseover="this.style.borderColor='<%= i%2===0 ? 'var(--green)' : 'var(--blue)' %>'; this.style.color='<%= i%2===0 ? 'var(--green)' : 'var(--blue)' %>'"
-                    onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--text-2)'">
+                    onmouseover="this.style.background='var(--green)'; this.style.color='#fff'; this.style.borderColor='var(--green)'"
+                    onmouseout="this.style.background='var(--bg-card)'; this.style.color='var(--text-2)'; this.style.borderColor='var(--border)'">
                     <%= tech %>
                 </span>
                 <% }) %>
