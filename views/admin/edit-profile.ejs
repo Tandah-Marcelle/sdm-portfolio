@@ -2,8 +2,8 @@
 <section class="py-24 px-6 min-h-screen bg-slate-950">
     <div class="max-w-3xl mx-auto">
         <div class="mb-16">
-            <a href="/admin" class="mono text-[10px] font-bold text-amber-500 uppercase tracking-[0.3em] hover:text-white transition-all mb-8 inline-block">← Return to Command Center</a>
-            <h1 class="text-6xl font-extrabold text-white tracking-tighter">Edit Profile<span class="text-amber-500">.</span></h1>
+            <a href="/admin" class="mono text-[10px] font-bold text-emerald-400 uppercase tracking-[0.3em] hover:text-white transition-all mb-8 inline-block">← Return to Command Center</a>
+            <h1 class="text-6xl font-extrabold text-white tracking-tighter">Edit Profile<span class="text-emerald-400">.</span></h1>
             <p class="text-slate-500 font-medium mt-4">Update your About page content, photo, and stats.</p>
         </div>
 
@@ -14,29 +14,29 @@
                 <div class="grid gap-3">
                     <label class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Full Name</label>
                     <input type="text" name="name" required value="<%= profile.name %>"
-                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 font-bold text-white focus:border-amber-500 outline-none transition-all">
+                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 font-bold text-white focus:border-cyan-500 outline-none transition-all">
                 </div>
                 <div class="grid gap-3">
                     <label class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Years of Experience</label>
                     <input type="text" name="yearsExp" required value="<%= profile.yearsExp %>"
-                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 text-slate-300 focus:border-amber-500 outline-none transition-all" placeholder="e.g. 6+">
+                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 text-slate-300 focus:border-cyan-500 outline-none transition-all" placeholder="e.g. 6+">
                 </div>
             </div>
 
             <div class="grid gap-3">
                 <label class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Hero Title / Tagline</label>
                 <input type="text" name="title" required value="<%= profile.title %>"
-                    class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 text-slate-300 focus:border-amber-500 outline-none transition-all">
+                    class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 text-slate-300 focus:border-cyan-500 outline-none transition-all">
             </div>
 
             <div class="grid gap-3">
                 <label class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Bio — Paragraph 1</label>
-                <textarea name="bio" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 text-slate-300 focus:border-amber-500 outline-none transition-all"><%= profile.bio %></textarea>
+                <textarea name="bio" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 text-slate-300 focus:border-cyan-500 outline-none transition-all"><%= profile.bio %></textarea>
             </div>
 
             <div class="grid gap-3">
                 <label class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Bio — Paragraph 2</label>
-                <textarea name="bio2" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 text-slate-300 focus:border-amber-500 outline-none transition-all"><%= profile.bio2 %></textarea>
+                <textarea name="bio2" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-5 text-slate-300 focus:border-cyan-500 outline-none transition-all"><%= profile.bio2 %></textarea>
             </div>
 
             <!-- Profile photo -->
@@ -49,8 +49,8 @@
                 <% } else { %>
                 <img id="photo-preview" src="" class="hidden w-32 h-32 rounded-2xl object-cover border border-slate-800">
                 <% } %>
-                <label class="flex items-center gap-4 border border-dashed border-slate-700 rounded-2xl p-5 cursor-pointer hover:border-amber-500 transition-all bg-slate-950 group">
-                    <svg class="w-8 h-8 text-slate-700 group-hover:text-amber-500 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <label class="flex items-center gap-4 border border-dashed border-slate-700 rounded-2xl p-5 cursor-pointer hover:border-cyan-500 transition-all bg-slate-950 group">
+                    <svg class="w-8 h-8 text-slate-700 group-hover:text-emerald-400 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                     <p class="text-slate-400 text-sm font-medium group-hover:text-white transition-colors">Replace profile photo</p>
@@ -64,18 +64,18 @@
                 <label class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Specialties (4 bullet points)</label>
                 <div class="space-y-3">
                     <input type="text" name="specialty1" value="<%= profile.specialty1 %>"
-                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-slate-300 focus:border-amber-500 outline-none transition-all" placeholder="Specialty 1">
+                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-slate-300 focus:border-cyan-500 outline-none transition-all" placeholder="Specialty 1">
                     <input type="text" name="specialty2" value="<%= profile.specialty2 %>"
-                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-slate-300 focus:border-amber-500 outline-none transition-all" placeholder="Specialty 2">
+                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-slate-300 focus:border-cyan-500 outline-none transition-all" placeholder="Specialty 2">
                     <input type="text" name="specialty3" value="<%= profile.specialty3 %>"
-                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-slate-300 focus:border-amber-500 outline-none transition-all" placeholder="Specialty 3">
+                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-slate-300 focus:border-cyan-500 outline-none transition-all" placeholder="Specialty 3">
                     <input type="text" name="specialty4" value="<%= profile.specialty4 %>"
-                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-slate-300 focus:border-amber-500 outline-none transition-all" placeholder="Specialty 4">
+                        class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-slate-300 focus:border-cyan-500 outline-none transition-all" placeholder="Specialty 4">
                 </div>
             </div>
 
             <div class="flex gap-4 pt-4">
-                <button type="submit" class="flex-1 bg-amber-500 text-black py-5 rounded-full font-extrabold tracking-widest uppercase hover:bg-white hover:scale-[1.02] transition-all shadow-xl shadow-amber-500/10">Save Profile</button>
+                <button type="submit" class="flex-1 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:from-emerald-400 hover:to-cyan-400 border border-emerald-400/50 py-5 rounded-full font-extrabold tracking-widest uppercase hover:bg-white hover:scale-[1.02] transition-all shadow-xl shadow-emerald-500/10">Save Profile</button>
                 <a href="/admin" class="px-8 py-5 border border-slate-700 text-slate-400 rounded-full font-extrabold text-xs uppercase tracking-widest hover:border-slate-500 hover:text-white transition-all text-center">Cancel</a>
             </div>
         </form>

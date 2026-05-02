@@ -1,102 +1,150 @@
-<section id="experience" class="py-32 px-6">
+<section id="experience" class="py-32 px-6" style="background-color:var(--bg)">
     <div class="max-w-7xl mx-auto">
 
         <div class="reveal mb-20">
-            <p class="mono text-amber-500 font-bold tracking-[0.3em] uppercase text-[10px] mb-4">Career Trajectory</p>
-            <h2 class="text-5xl font-extrabold text-white tracking-tighter">Professional Experience.</h2>
+            <p class="mono font-bold tracking-[0.3em] uppercase text-[10px] mb-4 accent-green">Career Trajectory</p>
+            <h2 class="text-5xl font-extrabold tracking-tighter" style="color:var(--text)">Professional Experience.</h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <% [
-                {
-                    role: 'Lead Mechatronics Engineer',
-                    org: 'Sparte Robotics — Yaoundé, Cameroon',
-                    period: '2023 — Present',
-                    type: 'Full-Time',
-                    points: [
-                        'Led design and fabrication of award-winning autonomous robotics systems',
-                        'Developed embedded firmware for multi-sensor aquatic exploration robots',
-                        'Managed cross-functional teams for national competition entries'
-                    ]
-                },
-                {
-                    role: 'Mechanical Design Engineer',
-                    org: 'IUC Engineering Lab — Yaoundé',
-                    period: '2022 — 2023',
-                    type: 'Academic / Research',
-                    points: [
-                        'Designed and simulated the Charcoal Cocoa Dryer thermal system in SolidWorks',
-                        'Developed the Plastic Extrusion Machine — graded Excellent',
-                        'Conducted FEA analysis and material selection for industrial prototypes'
-                    ]
-                },
-                {
-                    role: 'Embedded Systems Developer',
-                    org: 'Freelance / Independent Projects',
-                    period: '2021 — Present',
-                    type: 'Freelance',
-                    points: [
-                        'Built CNC laser engraver with GRBL-based motion control firmware',
-                        'Developed dual-extrusion 3D printer with Wi-Fi remote management',
-                        'Integrated computer vision pipelines for obstacle avoidance systems'
-                    ]
-                },
-                {
-                    role: 'Engineering Intern',
-                    org: 'Industrial Manufacturing Facility',
-                    period: '2020 — 2021',
-                    type: 'Internship',
-                    points: [
-                        'Assisted in CNC machine operation and maintenance',
-                        'Supported PLC programming for automated production lines',
-                        'Performed quality control inspections and technical documentation'
-                    ]
-                }
-            ].forEach(exp => { %>
-            <div class="reveal card-glow bg-slate-900/40 border border-slate-800 rounded-3xl p-8 hover:border-amber-500/30 transition-all duration-500">
-                <div class="flex justify-between items-start mb-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-2"><%= exp.role %></h3>
-                        <p class="text-base text-slate-400 font-medium"><%= exp.org %></p>
+        <!-- Cards wrapped in a single bordered container with internal dividers -->
+        <div class="reveal rounded-3xl overflow-hidden" style="border:1px solid var(--border)">
+            <div class="grid md:grid-cols-2">
+                <% [
+                    {
+                        role: 'Lead Mechatronics Engineer',
+                        org: 'Sparte Robotics — Yaoundé, Cameroon',
+                        period: '2023 — Present',
+                        type: 'Full-Time',
+                        color: 'green',
+                        points: [
+                            'Led design and fabrication of award-winning autonomous robotics systems',
+                            'Developed embedded firmware for multi-sensor aquatic exploration robots',
+                            'Managed cross-functional teams for national competition entries'
+                        ]
+                    },
+                    {
+                        role: 'Mechanical Design Engineer',
+                        org: 'IUC Engineering Lab — Yaoundé',
+                        period: '2022 — 2023',
+                        type: 'Academic / Research',
+                        color: 'blue',
+                        points: [
+                            'Designed and simulated the Charcoal Cocoa Dryer thermal system in SolidWorks',
+                            'Developed the Plastic Extrusion Machine — graded Excellent',
+                            'Conducted FEA analysis and material selection for industrial prototypes'
+                        ]
+                    },
+                    {
+                        role: 'Embedded Systems Developer',
+                        org: 'Freelance / Independent Projects',
+                        period: '2021 — Present',
+                        type: 'Freelance',
+                        color: 'green',
+                        points: [
+                            'Built CNC laser engraver with GRBL-based motion control firmware',
+                            'Developed dual-extrusion 3D printer with Wi-Fi remote management',
+                            'Integrated computer vision pipelines for obstacle avoidance systems'
+                        ]
+                    },
+                    {
+                        role: 'Engineering Intern',
+                        org: 'Industrial Manufacturing Facility',
+                        period: '2020 — 2021',
+                        type: 'Internship',
+                        color: 'blue',
+                        points: [
+                            'Assisted in CNC machine operation and maintenance',
+                            'Supported PLC programming for automated production lines',
+                            'Performed quality control inspections and technical documentation'
+                        ]
+                    }
+                ].forEach((exp, idx) => {
+                    const isLeft = idx % 2 === 0;
+                    const isTop  = idx < 2;
+                %>
+                <div class="exp-card p-10 transition-all duration-400 relative"
+                    style="
+                        background:var(--bg-card);
+                        border-right:<%= isLeft ? '1px solid var(--border)' : 'none' %>;
+                        border-bottom:<%= isTop ? '1px solid var(--border)' : 'none' %>;
+                    "
+                    onmouseover="
+                        this.style.background='var(--green)';
+                        this.querySelectorAll('.exp-role').forEach(e=>e.style.color='#fff');
+                        this.querySelectorAll('.exp-org').forEach(e=>e.style.color='rgba(255,255,255,0.7)');
+                        this.querySelectorAll('.exp-period').forEach(e=>e.style.color='#fff');
+                        this.querySelectorAll('.exp-badge').forEach(e=>{e.style.background='rgba(255,255,255,0.15)';e.style.color='#fff';e.style.borderColor='rgba(255,255,255,0.3)'});
+                        this.querySelectorAll('.exp-bullet').forEach(e=>e.style.color='rgba(255,255,255,0.85)');
+                        this.querySelectorAll('.exp-arrow').forEach(e=>e.style.color='#fff');
+                    "
+                    onmouseout="
+                        this.style.background='var(--bg-card)';
+                        this.querySelectorAll('.exp-role').forEach(e=>e.style.color='var(--text)');
+                        this.querySelectorAll('.exp-org').forEach(e=>e.style.color='var(--text-3)');
+                        this.querySelectorAll('.exp-period').forEach(e=>e.style.color=e.dataset.c);
+                        this.querySelectorAll('.exp-badge').forEach(e=>{e.style.background='var(--bg-card-2)';e.style.color='var(--text-3)';e.style.borderColor='var(--border)'});
+                        this.querySelectorAll('.exp-bullet').forEach(e=>e.style.color='var(--text-2)');
+                        this.querySelectorAll('.exp-arrow').forEach(e=>e.style.color=e.dataset.c);
+                    ">
+
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="exp-role text-2xl font-bold mb-2" style="color:var(--text)"><%= exp.role %></h3>
+                            <p class="exp-org text-base font-medium" style="color:var(--text-3)"><%= exp.org %></p>
+                        </div>
+                        <div class="text-right shrink-0 ml-4">
+                            <p class="exp-period mono text-sm font-bold"
+                                data-c="<%= exp.color === 'green' ? 'var(--green)' : 'var(--blue)' %>"
+                                style="color:<%= exp.color === 'green' ? 'var(--green)' : 'var(--blue)' %>">
+                                <%= exp.period %>
+                            </p>
+                            <span class="exp-badge mono text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-md mt-2 inline-block"
+                                style="color:var(--text-3); background:var(--bg-card-2); border:1px solid var(--border)">
+                                <%= exp.type %>
+                            </span>
+                        </div>
                     </div>
-                    <div class="text-right shrink-0 ml-4">
-                        <p class="mono text-sm text-amber-500 font-bold"><%= exp.period %></p>
-                        <span class="mono text-xs font-bold uppercase tracking-widest text-slate-500 bg-slate-900 border border-slate-800 px-3 py-1 rounded-md mt-2 inline-block"><%= exp.type %></span>
-                    </div>
+
+                    <ul class="space-y-3">
+                        <% exp.points.forEach(pt => { %>
+                        <li class="flex items-start gap-3 text-base exp-bullet" style="color:var(--text-2)">
+                            <span class="exp-arrow mt-1 shrink-0 font-bold"
+                                data-c="<%= exp.color === 'green' ? 'var(--green)' : 'var(--blue)' %>"
+                                style="color:<%= exp.color === 'green' ? 'var(--green)' : 'var(--blue)' %>">›</span>
+                            <%= pt %>
+                        </li>
+                        <% }) %>
+                    </ul>
+
                 </div>
-                <ul class="space-y-3">
-                    <% exp.points.forEach(pt => { %>
-                    <li class="flex items-start gap-3 text-base text-slate-400">
-                        <span class="text-amber-500 mt-1 shrink-0">›</span>
-                        <%= pt %>
-                    </li>
-                    <% }) %>
-                </ul>
+                <% }) %>
             </div>
-            <% }) %>
         </div>
 
-        <div class="reveal mt-16 bg-slate-900/20 border border-slate-900 rounded-3xl p-10">
-            <p class="mono text-sm font-bold uppercase tracking-[0.3em] text-slate-400 mb-8">Education</p>
+        <!-- Education -->
+        <div class="reveal mt-8 rounded-3xl p-10" style="background:var(--bg-card); border:1px solid var(--border)">
+            <p class="mono text-sm font-bold uppercase tracking-[0.3em] mb-8 accent-blue">Education</p>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="flex gap-6">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
-                        <span class="text-amber-500 font-extrabold text-base">IUC</span>
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+                        style="background:rgba(2,138,15,0.1); border:1px solid rgba(2,138,15,0.3)">
+                        <span class="font-extrabold text-base accent-green">IUC</span>
                     </div>
                     <div>
-                        <h4 class="text-white font-bold text-lg mb-1">B.Eng. Electromechanical Engineering</h4>
-                        <p class="text-slate-400 text-base">Institut Universitaire de la Côte (IUC)</p>
-                        <p class="mono text-sm text-amber-500 mt-1">2019 — 2024</p>
+                        <h4 class="font-bold text-lg mb-1" style="color:var(--text)">B.Eng. Electromechanical Engineering</h4>
+                        <p class="text-base" style="color:var(--text-2)">Institut Universitaire de la Côte (IUC)</p>
+                        <p class="mono text-sm mt-1 accent-green">2019 — 2024</p>
                     </div>
                 </div>
                 <div class="flex gap-6">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
-                        <span class="text-amber-500 font-extrabold text-base">DS</span>
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+                        style="background:rgba(2,132,199,0.1); border:1px solid rgba(2,132,199,0.3)">
+                        <span class="font-extrabold text-base accent-blue">DS</span>
                     </div>
                     <div>
-                        <h4 class="text-white font-bold text-lg mb-1">3DExperience Platform Certification</h4>
-                        <p class="text-slate-400 text-base">Dassault Systèmes — Online</p>
-                        <p class="mono text-sm text-amber-500 mt-1">2023 — 2025</p>
+                        <h4 class="font-bold text-lg mb-1" style="color:var(--text)">3DExperience Platform Certification</h4>
+                        <p class="text-base" style="color:var(--text-2)">Dassault Systèmes — Online</p>
+                        <p class="mono text-sm mt-1 accent-blue">2023 — 2025</p>
                     </div>
                 </div>
             </div>

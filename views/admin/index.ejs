@@ -6,25 +6,25 @@
         <!-- Header -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b border-slate-900 pb-12 gap-6">
             <div>
-                <p class="mono text-amber-500 font-bold tracking-[0.3em] uppercase text-xs mb-3">Command Center</p>
-                <h1 class="text-6xl font-extrabold text-white tracking-tighter">Portfolio Management<span class="text-amber-500">.</span></h1>
+                <p class="mono text-emerald-400 font-bold tracking-[0.3em] uppercase text-xs mb-3">Command Center</p>
+                <h1 class="text-6xl font-extrabold text-white tracking-tighter">Portfolio Management<span class="text-emerald-400">.</span></h1>
                 <p class="text-slate-500 mt-3 font-medium">Manage your projects, awards, and certifications.</p>
             </div>
             <div class="flex flex-wrap gap-3">
                 <a href="/admin/projects/new"
-                    class="bg-amber-500 text-black px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-lg shadow-amber-500/20">
+                    class="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:from-emerald-400 hover:to-cyan-400 border border-emerald-400/50 px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-lg shadow-emerald-500/20">
                     + Add Project
                 </a>
                 <a href="/admin/awards/new"
-                    class="border border-slate-700 text-slate-300 px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:border-amber-500 hover:text-amber-500 transition-all">
+                    class="border border-slate-700 text-slate-300 px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:border-cyan-500 hover:text-emerald-400 transition-all">
                     + Add Award
                 </a>
                 <a href="/admin/certifications/new"
-                    class="border border-slate-700 text-slate-300 px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:border-amber-500 hover:text-amber-500 transition-all">
+                    class="border border-slate-700 text-slate-300 px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:border-cyan-500 hover:text-emerald-400 transition-all">
                     + Add Certification
                 </a>
                 <a href="/admin/profile"
-                    class="border border-amber-500/40 text-amber-500 px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-black transition-all">
+                    class="border border-emerald-500/40 text-emerald-400 px-6 py-3.5 rounded-full font-extrabold text-xs uppercase tracking-widest hover:bg-emerald-500 hover:text-black transition-all">
                     ✎ Edit Profile
                 </a>
                 <a href="/" target="_blank"
@@ -44,9 +44,9 @@
                 <p class="text-4xl font-extrabold text-white mb-1"><%= certifications.length %></p>
                 <p class="mono text-[10px] font-bold uppercase tracking-widest text-slate-600">Certifications</p>
             </div>
-            <div class="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6">
-                <p class="text-4xl font-extrabold text-amber-500 mb-1"><%= projects.length + awards.length + certifications.length %></p>
-                <p class="mono text-[10px] font-bold uppercase tracking-widest text-amber-500/60">Total Records</p>
+            <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-6">
+                <p class="text-4xl font-extrabold text-emerald-400 mb-1"><%= projects.length + awards.length + certifications.length %></p>
+                <p class="mono text-[10px] font-bold uppercase tracking-widest text-emerald-400/60">Total Records</p>
             </div>
         </div>
 
@@ -54,19 +54,19 @@
         <div class="mb-20">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-xs font-bold text-slate-500 uppercase tracking-[0.3em]">
-                    Active Projects — <span class="text-amber-500"><%= projects.length %></span>
+                    Active Projects — <span class="text-emerald-400"><%= projects.length %></span>
                 </h2>
-                <a href="/admin/projects/new" class="mono text-[10px] font-bold text-amber-500 hover:text-white transition-colors uppercase tracking-widest">+ New</a>
+                <a href="/admin/projects/new" class="mono text-[10px] font-bold text-emerald-400 hover:text-white transition-colors uppercase tracking-widest">+ New</a>
             </div>
             <% if (projects.length === 0) { %>
             <div class="border border-dashed border-slate-800 rounded-2xl p-12 text-center">
                 <p class="text-slate-600 font-medium">No projects yet.</p>
-                <a href="/admin/projects/new" class="text-amber-500 text-sm font-bold mt-2 inline-block hover:text-white transition-colors">Add your first project →</a>
+                <a href="/admin/projects/new" class="text-emerald-400 text-sm font-bold mt-2 inline-block hover:text-white transition-colors">Add your first project →</a>
             </div>
             <% } else { %>
             <div class="grid gap-4">
                 <% projects.forEach(project => { %>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex justify-between items-center group hover:border-amber-500/30 transition-all">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex justify-between items-center group hover:border-emerald-500/30 transition-all">
                     <div class="flex items-center gap-6">
                         <div class="w-16 h-16 bg-black rounded-xl overflow-hidden border border-slate-800 shrink-0">
                             <img src="<%= project.image %>" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'">
@@ -87,7 +87,7 @@
                             <%= new Date(project.createdAt).toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' }) %>
                         </span>
                         <a href="/admin/projects/<%= project.id %>/edit"
-                            class="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest hover:text-amber-500 transition-colors px-4 py-2.5 border border-slate-800 rounded-full hover:border-amber-500/30">
+                            class="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest hover:text-emerald-400 transition-colors px-4 py-2.5 border border-slate-800 rounded-full hover:border-emerald-500/30">
                             Edit
                         </a>
                         <form action="/admin/projects/<%= project.id %>/delete" method="POST"
@@ -108,21 +108,21 @@
         <div class="mb-20">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-xs font-bold text-slate-500 uppercase tracking-[0.3em]">
-                    Awards & Honours — <span class="text-amber-500"><%= awards.length %></span>
+                    Awards & Honours — <span class="text-emerald-400"><%= awards.length %></span>
                 </h2>
-                <a href="/admin/awards/new" class="mono text-[10px] font-bold text-amber-500 hover:text-white transition-colors uppercase tracking-widest">+ New</a>
+                <a href="/admin/awards/new" class="mono text-[10px] font-bold text-emerald-400 hover:text-white transition-colors uppercase tracking-widest">+ New</a>
             </div>
             <% if (awards.length === 0) { %>
             <div class="border border-dashed border-slate-800 rounded-2xl p-12 text-center">
                 <p class="text-slate-600 font-medium">No awards yet.</p>
-                <a href="/admin/awards/new" class="text-amber-500 text-sm font-bold mt-2 inline-block hover:text-white transition-colors">Add your first award →</a>
+                <a href="/admin/awards/new" class="text-emerald-400 text-sm font-bold mt-2 inline-block hover:text-white transition-colors">Add your first award →</a>
             </div>
             <% } else { %>
             <div class="grid md:grid-cols-2 gap-4">
                 <% awards.forEach(award => { %>
-                <div class="bg-slate-900/40 border border-slate-900 p-6 rounded-2xl flex justify-between items-start group hover:border-amber-500/20 transition-all">
+                <div class="bg-slate-900/40 border border-slate-900 p-6 rounded-2xl flex justify-between items-start group hover:border-emerald-500/20 transition-all">
                     <div class="flex gap-4">
-                        <span class="mono text-amber-500/30 text-xl font-extrabold shrink-0 group-hover:text-amber-500/60 transition-colors">/</span>
+                        <span class="mono text-emerald-400/30 text-xl font-extrabold shrink-0 group-hover:text-emerald-400/60 transition-colors">/</span>
                         <div>
                             <h4 class="text-white font-bold text-sm mb-1"><%= award.title %></h4>
                             <p class="text-[10px] font-bold text-slate-600 uppercase tracking-widest"><%= award.organization %></p>
@@ -132,9 +132,9 @@
                         </div>
                     </div>
                     <div class="flex flex-col items-end gap-2 shrink-0 ml-4">
-                        <span class="mono text-xs text-amber-500/60 font-bold"><%= award.year %></span>
+                        <span class="mono text-xs text-emerald-400/60 font-bold"><%= award.year %></span>
                         <a href="/admin/awards/<%= award.id %>/edit"
-                            class="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest hover:text-amber-500 transition-colors">
+                            class="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest hover:text-emerald-400 transition-colors">
                             Edit
                         </a>
                         <form action="/admin/awards/<%= award.id %>/delete" method="POST"
@@ -155,31 +155,31 @@
         <div class="mb-12">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-xs font-bold text-slate-500 uppercase tracking-[0.3em]">
-                    Certifications — <span class="text-amber-500"><%= certifications.length %></span>
+                    Certifications — <span class="text-emerald-400"><%= certifications.length %></span>
                 </h2>
-                <a href="/admin/certifications/new" class="mono text-[10px] font-bold text-amber-500 hover:text-white transition-colors uppercase tracking-widest">+ New</a>
+                <a href="/admin/certifications/new" class="mono text-[10px] font-bold text-emerald-400 hover:text-white transition-colors uppercase tracking-widest">+ New</a>
             </div>
             <% if (certifications.length === 0) { %>
             <div class="border border-dashed border-slate-800 rounded-2xl p-12 text-center">
                 <p class="text-slate-600 font-medium">No certifications yet.</p>
-                <a href="/admin/certifications/new" class="text-amber-500 text-sm font-bold mt-2 inline-block hover:text-white transition-colors">Add your first certification →</a>
+                <a href="/admin/certifications/new" class="text-emerald-400 text-sm font-bold mt-2 inline-block hover:text-white transition-colors">Add your first certification →</a>
             </div>
             <% } else { %>
             <div class="grid md:grid-cols-3 gap-4">
                 <% certifications.forEach(cert => { %>
-                <div class="bg-slate-900/40 border border-slate-900 p-6 rounded-2xl group hover:border-amber-500/20 transition-all">
+                <div class="bg-slate-900/40 border border-slate-900 p-6 rounded-2xl group hover:border-emerald-500/20 transition-all">
                     <div class="flex justify-between items-start mb-4">
                         <div class="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center overflow-hidden">
                             <% if (cert.badge && cert.badge !== '') { %>
                             <img src="<%= cert.badge %>" alt="" class="w-8 h-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-                            <span class="hidden text-amber-500 font-extrabold">✓</span>
+                            <span class="hidden text-emerald-400 font-extrabold">✓</span>
                             <% } else { %>
-                            <span class="text-amber-500 font-extrabold">✓</span>
+                            <span class="text-emerald-400 font-extrabold">✓</span>
                             <% } %>
                         </div>
                         <div class="flex gap-3">
                             <a href="/admin/certifications/<%= cert.id %>/edit"
-                                class="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest hover:text-amber-500 transition-colors">
+                                class="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest hover:text-emerald-400 transition-colors">
                                 Edit
                             </a>
                             <form action="/admin/certifications/<%= cert.id %>/delete" method="POST"
@@ -193,7 +193,7 @@
                     </div>
                     <h4 class="text-white font-bold text-sm mb-1 leading-snug"><%= cert.name %></h4>
                     <p class="text-slate-600 text-xs font-medium"><%= cert.issuer %></p>
-                    <span class="mono text-[10px] font-bold text-amber-500/60 mt-2 inline-block"><%= cert.year %></span>
+                    <span class="mono text-[10px] font-bold text-emerald-400/60 mt-2 inline-block"><%= cert.year %></span>
                 </div>
                 <% }) %>
             </div>

@@ -1,51 +1,167 @@
-    <footer id="contact" class="bg-black border-t border-slate-900 pt-32 pb-12 mt-32">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-16 mb-20">
-                <div class="md:col-span-1">
-                    <p class="text-4xl font-extrabold text-white tracking-tighter mb-4">Let's build<br/>the future<span class="text-amber-500">.</span></p>
-                    <p class="text-slate-500 leading-relaxed text-sm">Open to collaborations, consulting engagements, and high-impact engineering projects worldwide.</p>
+    <!-- ═══════════════════════════════════════════════ CONTACT -->
+    <section id="contact" class="py-32 px-6" style="background-color:var(--bg)">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-20 items-start">
+
+                <!-- Left — text -->
+                <div class="reveal">
+                    <p class="mono font-bold tracking-[0.3em] uppercase text-sm mb-6 accent-green">Open to Opportunities</p>
+                    <h2 class="text-6xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-tight" style="color:var(--text)">
+                        Have a project<br/>in mind<span class="accent-green">?</span>
+                    </h2>
+                    <p class="text-xl leading-relaxed mb-10" style="color:var(--text-2)">
+                        Whether it's a complex industrial machine, an embedded system, or an Industry 4.0 integration —
+                        let's engineer something remarkable together.
+                    </p>
+                    <div class="space-y-5">
+                        <a href="mailto:manueldongmo@gmail.com"
+                            class="flex items-center gap-4 group hover-green transition-colors"
+                            style="color:var(--text-2)">
+                            <span class="w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all group-hover:border-green-500"
+                                style="border:1px solid var(--border)">@</span>
+                            <span class="text-base font-medium">manueldongmo@gmail.com</span>
+                        </a>
+                        <a href="https://wa.me/237683249666" target="_blank"
+                            class="flex items-center gap-4 group hover-green transition-colors"
+                            style="color:var(--text-2)">
+                            <span class="w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all"
+                                style="border:1px solid var(--border)">WA</span>
+                            <span class="text-base font-medium">+237 683 249 666</span>
+                        </a>
+                        <a href="https://shorturl.at/p2jvI" target="_blank"
+                            class="flex items-center gap-4 group hover-blue transition-colors"
+                            style="color:var(--text-2)">
+                            <span class="w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all"
+                                style="border:1px solid var(--border)">in</span>
+                            <span class="text-base font-medium">LinkedIn Profile</span>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Right — contact form -->
+                <div class="reveal">
+                    <form action="mailto:manueldongmo@gmail.com" method="GET"
+                        class="rounded-3xl p-10 space-y-6"
+                        style="background:var(--bg-card); border:1px solid var(--border)">
+
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div class="grid gap-2">
+                                <label class="mono text-xs font-bold uppercase tracking-[0.3em]" style="color:var(--text-3)">Full Name</label>
+                                <input type="text" name="name" placeholder="John Doe" required
+                                    class="w-full rounded-2xl px-5 py-4 text-base font-medium transition-all outline-none"
+                                    style="background:var(--bg-card-2); border:1px solid var(--border); color:var(--text)"
+                                    onfocus="this.style.borderColor='var(--green)'"
+                                    onblur="this.style.borderColor='var(--border)'">
+                            </div>
+                            <div class="grid gap-2">
+                                <label class="mono text-xs font-bold uppercase tracking-[0.3em]" style="color:var(--text-3)">Email</label>
+                                <input type="email" name="email" placeholder="you@company.com" required
+                                    class="w-full rounded-2xl px-5 py-4 text-base font-medium transition-all outline-none"
+                                    style="background:var(--bg-card-2); border:1px solid var(--border); color:var(--text)"
+                                    onfocus="this.style.borderColor='var(--green)'"
+                                    onblur="this.style.borderColor='var(--border)'">
+                            </div>
+                        </div>
+
+                        <div class="grid gap-2">
+                            <label class="mono text-xs font-bold uppercase tracking-[0.3em]" style="color:var(--text-3)">Subject</label>
+                            <input type="text" name="subject" placeholder="Project inquiry / Collaboration / Consulting" required
+                                class="w-full rounded-2xl px-5 py-4 text-base font-medium transition-all outline-none"
+                                style="background:var(--bg-card-2); border:1px solid var(--border); color:var(--text)"
+                                onfocus="this.style.borderColor='var(--green)'"
+                                onblur="this.style.borderColor='var(--border)'">
+                        </div>
+
+                        <div class="grid gap-2">
+                            <label class="mono text-xs font-bold uppercase tracking-[0.3em]" style="color:var(--text-3)">Message</label>
+                            <textarea name="body" rows="5" placeholder="Describe your project or inquiry..." required
+                                class="w-full rounded-2xl px-5 py-4 text-base font-medium transition-all outline-none resize-none"
+                                style="background:var(--bg-card-2); border:1px solid var(--border); color:var(--text)"
+                                onfocus="this.style.borderColor='var(--green)'"
+                                onblur="this.style.borderColor='var(--border)'"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-5 rounded-full font-extrabold text-sm uppercase tracking-widest hover:opacity-90 hover:scale-[1.02] transition-all"
+                            style="background:var(--green); color:#fff">
+                            Send Message
+                        </button>
+
+                        <p class="text-center mono text-xs" style="color:var(--text-muted)">
+                            Or reach out directly at
+                            <a href="mailto:manueldongmo@gmail.com" class="accent-green hover:underline">manueldongmo@gmail.com</a>
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ FOOTER -->
+    <footer class="pt-20 pb-10 mt-0" style="background-color:var(--green)">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-16 mb-16">
+
+                <div class="md:col-span-1">
+                    <p class="text-5xl font-extrabold tracking-tighter mb-6" style="color:#fff">
+                        M.DONGMO<span style="color:rgba(255,255,255,0.5)">.</span>
+                    </p>
+                    <p class="leading-relaxed text-lg" style="color:rgba(255,255,255,0.75)">
+                        Electromechanical Engineer specializing in Industry 4.0, Machine Design, and Embedded Systems.
+                    </p>
+                </div>
+
                 <div>
-                    <p class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-600 mb-6">Direct Contact</p>
+                    <p class="mono text-sm font-bold uppercase tracking-[0.3em] mb-6" style="color:rgba(255,255,255,0.5)">Quick Links</p>
+                    <div class="space-y-3">
+                        <% ['About', 'Skills', 'Experience', 'Projects', 'Awards', 'Certifications'].forEach(link => { %>
+                        <a href="#<%= link.toLowerCase() %>"
+                            class="block text-base font-medium transition-colors hover:text-white"
+                            style="color:rgba(255,255,255,0.7)"><%= link %></a>
+                        <% }) %>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="mono text-sm font-bold uppercase tracking-[0.3em] mb-6" style="color:rgba(255,255,255,0.5)">Contact</p>
                     <div class="space-y-4">
-                        <a href="mailto:manueldongmo@gmail.com" class="flex items-center space-x-3 text-slate-400 hover:text-amber-500 transition-colors group">
-                            <span class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center group-hover:border-amber-500 transition-colors text-xs">@</span>
-                            <span class="text-sm font-medium">manueldongmo@gmail.com</span>
+                        <a href="mailto:manueldongmo@gmail.com"
+                            class="flex items-center gap-3 text-base font-medium transition-colors hover:text-white"
+                            style="color:rgba(255,255,255,0.75)">
+                            <span class="w-9 h-9 rounded-full flex items-center justify-center text-sm shrink-0"
+                                style="background:rgba(255,255,255,0.15)">@</span>
+                            manueldongmo@gmail.com
                         </a>
-                        <a href="https://wa.me/237683249666" target="_blank" class="flex items-center space-x-3 text-slate-400 hover:text-amber-500 transition-colors group">
-                            <span class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center group-hover:border-amber-500 transition-colors text-xs">WA</span>
-                            <span class="text-sm font-medium">+237 683 249 666</span>
+                        <a href="https://wa.me/237683249666" target="_blank"
+                            class="flex items-center gap-3 text-base font-medium transition-colors hover:text-white"
+                            style="color:rgba(255,255,255,0.75)">
+                            <span class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+                                style="background:rgba(255,255,255,0.15)">WA</span>
+                            +237 683 249 666
                         </a>
-                        <div class="flex items-center space-x-3 text-slate-600">
-                            <span class="w-8 h-8 rounded-full border border-slate-900 flex items-center justify-center text-xs">📍</span>
-                            <span class="text-sm font-medium">Yaoundé, Cameroon</span>
+                        <a href="https://shorturl.at/p2jvI" target="_blank"
+                            class="flex items-center gap-3 text-base font-medium transition-colors hover:text-white"
+                            style="color:rgba(255,255,255,0.75)">
+                            <span class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+                                style="background:rgba(255,255,255,0.15)">in</span>
+                            LinkedIn Profile
+                        </a>
+                        <div class="flex items-center gap-3 text-base font-medium" style="color:rgba(255,255,255,0.5)">
+                            <span class="w-9 h-9 rounded-full flex items-center justify-center text-sm shrink-0"
+                                style="background:rgba(255,255,255,0.1)">📍</span>
+                            Yaoundé, Cameroon
                         </div>
                     </div>
                 </div>
-                <div>
-                    <p class="mono text-[10px] font-bold uppercase tracking-[0.3em] text-slate-600 mb-6">Professional Networks</p>
-                    <div class="space-y-4">
-                        <a href="https://shorturl.at/p2jvI" target="_blank" class="flex items-center space-x-3 text-slate-400 hover:text-amber-500 transition-colors group">
-                            <span class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center group-hover:border-amber-500 transition-colors text-xs font-bold">in</span>
-                            <span class="text-sm font-medium">LinkedIn Profile</span>
-                        </a>
-                        <a href="#" class="flex items-center space-x-3 text-slate-600 cursor-not-allowed">
-                            <span class="w-8 h-8 rounded-full border border-slate-900 flex items-center justify-center text-xs font-bold">GH</span>
-                            <span class="text-sm font-medium">GitHub (Coming Soon)</span>
-                        </a>
-                    </div>
-                    <div class="mt-8">
-                        <a href="mailto:manueldongmo@gmail.com"
-                            class="inline-block bg-amber-500 text-black px-8 py-4 rounded-full font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-lg shadow-amber-500/20">
-                            Request CV / Catalog
-                        </a>
-                    </div>
-                </div>
+
             </div>
-            <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-slate-700 font-bold">
+
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-bold uppercase tracking-widest"
+                style="border-top:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.5)">
                 <p>&copy; 2025 Manuel Songfack Dongmo — All Rights Reserved</p>
                 <p class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 pulse-dot inline-block"></span>
+                    <span class="w-2 h-2 rounded-full pulse-dot inline-block" style="background:#fff"></span>
                     Available for Opportunities
                 </p>
             </div>
@@ -55,14 +171,14 @@
     <script>
         // Reveal on scroll
         const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
                     setTimeout(() => entry.target.classList.add('visible'), i * 80);
                 }
             });
         }, { threshold: 0.1 });
-        reveals.forEach(el => observer.observe(el));
+        reveals.forEach(el => revealObserver.observe(el));
 
         // Skill bars
         const skillObserver = new IntersectionObserver((entries) => {

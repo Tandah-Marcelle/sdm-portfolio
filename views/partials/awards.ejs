@@ -1,61 +1,123 @@
-<section id="awards" class="py-32 px-6">
-    <div class="max-w-6xl mx-auto">
+<section id="awards" class="py-32 px-6" style="background-color:var(--bg)">
+    <div class="max-w-7xl mx-auto">
 
         <div class="reveal text-center mb-24">
-            <p class="mono text-amber-500 font-bold tracking-[0.3em] uppercase text-sm mb-4">Recognition</p>
-            <h2 class="text-6xl font-extrabold text-white tracking-tighter italic">Distinctions & Honours.</h2>
-            <p class="text-slate-500 mt-4 text-lg">National and international recognition for engineering excellence.</p>
+            <p class="mono font-bold tracking-[0.3em] uppercase text-sm mb-4 accent-green">Recognition</p>
+            <h2 class="text-6xl font-extrabold tracking-tighter italic" style="color:var(--text)">Distinctions & Honours.</h2>
+            <p class="mt-4 text-lg" style="color:var(--text-3)">National and international recognition for engineering excellence.</p>
         </div>
 
-        <div class="space-y-12">
-            <% awards.forEach((award, i) => { %>
-            <%
+        <div class="space-y-10">
+            <% awards.forEach((award, i) => {
                 const isEven = i % 2 === 0;
+                const accentColor = isEven ? 'var(--green)' : 'var(--blue)';
             %>
-            <div class="reveal group">
-                <div class="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-800 hover:border-amber-500/30 transition-all duration-500 shadow-xl bg-slate-900/40 <%= isEven ? '' : 'md:[direction:rtl]' %>">
+            <div class="reveal group rounded-3xl overflow-hidden transition-all duration-500"
+                style="background:var(--bg-card); border:1px solid var(--border); min-height:320px">
 
-                    <!-- Image side -->
-                    <div class="relative overflow-hidden min-h-[280px] md:[direction:ltr]">
+                <% if (isEven) { %>
+                <!-- ODD (0,2…): image LEFT 2/3 — content RIGHT 1/3 -->
+                <div class="flex flex-col md:flex-row h-full">
+
+                    <!-- Image — 2/3 -->
+                    <div class="relative md:w-2/3 min-h-[280px] overflow-hidden">
                         <% if (award.image && award.image !== '') { %>
                         <img src="<%= award.image %>" alt="<%= award.title %>"
-                            class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                         <% } else { %>
-                        <!-- Placeholder when no image -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 flex items-center justify-center">
-                            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#f59e0b 1px, transparent 1px); background-size: 28px 28px;"></div>
-                            <span class="mono text-amber-500/20 font-extrabold text-[120px] leading-none select-none">/0<%= i + 1 %></span>
+                        <div class="absolute inset-0 flex items-center justify-center" style="background:var(--bg-card-2)">
+                            <div class="absolute inset-0 opacity-5"
+                                style="background-image:radial-gradient(<%= accentColor %> 1px,transparent 1px);background-size:32px 32px"></div>
+                            <span class="mono font-extrabold select-none" style="font-size:10rem;line-height:1;color:<%= accentColor %>;opacity:0.08">/0<%= i+1 %></span>
                         </div>
                         <% } %>
-                        <div class="absolute inset-0 bg-gradient-to-r <%= isEven ? 'from-transparent to-slate-900/80' : 'from-slate-900/80 to-transparent' %>"></div>
-
-                        <!-- Number badge -->
-                        <div class="absolute top-6 <%= isEven ? 'left-6' : 'right-6' %> z-10">
-                            <span class="mono text-2xl font-extrabold text-amber-500/40 group-hover:text-amber-500/70 transition-colors">/0<%= i + 1 %></span>
+                        <!-- fade to right toward content -->
+                        <div class="absolute inset-0" style="background:linear-gradient(to right, transparent 55%, var(--bg-card) 100%)"></div>
+                        <!-- number badge -->
+                        <div class="absolute top-7 left-7 z-10">
+                            <span class="mono text-3xl font-extrabold" style="color:<%= accentColor %>;opacity:0.5">/0<%= i+1 %></span>
                         </div>
                     </div>
 
-                    <!-- Content side -->
-                    <div class="p-10 md:p-12 flex flex-col justify-center md:[direction:ltr]">
-                        <div class="mb-3">
-                            <span class="mono text-xs font-bold uppercase tracking-[0.3em] text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3 py-1.5 rounded-full">
-                                <%= award.year %>
-                            </span>
+                    <!-- Styled divider -->
+                    <div class="hidden md:flex flex-col items-center justify-center w-px relative" style="background:var(--border)">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center z-10 relative" style="background:var(--bg-card);border:2px solid <%= accentColor %>">
+                            <div class="w-2.5 h-2.5 rounded-full" style="background:<%= accentColor %>"></div>
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug mb-4">
+                        <div class="absolute top-0 bottom-0 w-px" style="background:linear-gradient(to bottom, transparent, <%= accentColor %>60, transparent)"></div>
+                    </div>
+
+                    <!-- Content — 1/3 -->
+                    <div class="md:w-1/3 p-10 flex flex-col justify-center">
+                        <span class="mono text-xs font-bold uppercase tracking-[0.3em] px-3 py-1.5 rounded-full mb-5 self-start"
+                            style="color:<%= accentColor %>;border:1px solid <%= accentColor %>50;background:<%= accentColor %>15">
+                            <%= award.year %>
+                        </span>
+                        <h3 class="text-2xl font-extrabold tracking-tight leading-snug mb-4" style="color:var(--text)">
                             <%= award.title %>
                         </h3>
-                        <p class="text-base font-bold text-amber-500/70 uppercase tracking-widest mb-5 mono">
+                        <p class="mono text-sm font-bold uppercase tracking-widest mb-5" style="color:<%= accentColor %>">
                             <%= award.organization %>
                         </p>
                         <% if (award.description) { %>
-                        <p class="text-slate-400 text-lg leading-relaxed">
-                            <%= award.description %>
-                        </p>
+                        <p class="text-base leading-relaxed" style="color:var(--text-2)"><%= award.description %></p>
                         <% } %>
                     </div>
 
                 </div>
+
+                <% } else { %>
+                <!-- EVEN (1,3…): content LEFT 1/3 — image RIGHT 2/3 -->
+                <div class="flex flex-col md:flex-row h-full">
+
+                    <!-- Content — 1/3 -->
+                    <div class="md:w-1/3 p-10 flex flex-col justify-center">
+                        <span class="mono text-xs font-bold uppercase tracking-[0.3em] px-3 py-1.5 rounded-full mb-5 self-start"
+                            style="color:<%= accentColor %>;border:1px solid <%= accentColor %>50;background:<%= accentColor %>15">
+                            <%= award.year %>
+                        </span>
+                        <h3 class="text-2xl font-extrabold tracking-tight leading-snug mb-4" style="color:var(--text)">
+                            <%= award.title %>
+                        </h3>
+                        <p class="mono text-sm font-bold uppercase tracking-widest mb-5" style="color:<%= accentColor %>">
+                            <%= award.organization %>
+                        </p>
+                        <% if (award.description) { %>
+                        <p class="text-base leading-relaxed" style="color:var(--text-2)"><%= award.description %></p>
+                        <% } %>
+                    </div>
+
+                    <!-- Styled divider -->
+                    <div class="hidden md:flex flex-col items-center justify-center w-px relative" style="background:var(--border)">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center z-10 relative" style="background:var(--bg-card);border:2px solid <%= accentColor %>">
+                            <div class="w-2.5 h-2.5 rounded-full" style="background:<%= accentColor %>"></div>
+                        </div>
+                        <div class="absolute top-0 bottom-0 w-px" style="background:linear-gradient(to bottom, transparent, <%= accentColor %>60, transparent)"></div>
+                    </div>
+
+                    <!-- Image — 2/3 -->
+                    <div class="relative md:w-2/3 min-h-[280px] overflow-hidden">
+                        <% if (award.image && award.image !== '') { %>
+                        <img src="<%= award.image %>" alt="<%= award.title %>"
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <% } else { %>
+                        <div class="absolute inset-0 flex items-center justify-center" style="background:var(--bg-card-2)">
+                            <div class="absolute inset-0 opacity-5"
+                                style="background-image:radial-gradient(<%= accentColor %> 1px,transparent 1px);background-size:32px 32px"></div>
+                            <span class="mono font-extrabold select-none" style="font-size:10rem;line-height:1;color:<%= accentColor %>;opacity:0.08">/0<%= i+1 %></span>
+                        </div>
+                        <% } %>
+                        <!-- fade to left toward content -->
+                        <div class="absolute inset-0" style="background:linear-gradient(to left, transparent 55%, var(--bg-card) 100%)"></div>
+                        <!-- number badge -->
+                        <div class="absolute top-7 right-7 z-10">
+                            <span class="mono text-3xl font-extrabold" style="color:<%= accentColor %>;opacity:0.5">/0<%= i+1 %></span>
+                        </div>
+                    </div>
+
+                </div>
+                <% } %>
+
             </div>
             <% }) %>
         </div>
