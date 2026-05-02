@@ -100,9 +100,10 @@
                 Electromechanical Engineer · Industry 4.0 Specialist
             </p>
 
-            <!-- Name with cursor -->
+            <!-- Name with typewriter -->
             <h1 class="hero-name text-7xl md:text-[110px] font-extrabold tracking-tighter leading-[0.85] mb-8" style="color:var(--text)">
-                Manuel<br/>Dongmo<span class="accent-green">.</span><span class="cursor-blink" style="background:var(--green)"></span>
+                <span id="tw-line1"></span><br/>
+                <span id="tw-line2"></span><span id="tw-dot" class="accent-green" style="opacity:0">.</span><span class="cursor-blink" id="hero-cursor" style="background:var(--green)"></span>
             </h1>
 
             <!-- Subtitle -->
@@ -158,6 +159,32 @@
 
 <script>
 (function () {
+    // ── Typewriter for name ────────────────────────────────
+    const tw1 = document.getElementById('tw-line1');
+    const tw2 = document.getElementById('tw-line2');
+    const twDot = document.getElementById('tw-dot');
+    const twCursor = document.getElementById('hero-cursor');
+
+    function typeWord(el, text, delay, onDone) {
+        let i = 0;
+        setTimeout(() => {
+            const t = setInterval(() => {
+                el.textContent += text[i++];
+                if (i >= text.length) { clearInterval(t); if (onDone) onDone(); }
+            }, 80);
+        }, delay);
+    }
+
+    typeWord(tw1, 'Manuel', 350, () => {
+        typeWord(tw2, 'Dongmo', 200, () => {
+            twDot.style.transition = 'opacity 0.2s';
+            twDot.style.opacity = '1';
+            setTimeout(() => {
+                if (twCursor) { twCursor.style.animation = 'none'; twCursor.style.opacity = '0'; }
+            }, 3000);
+        });
+    });
+
     // ── Floating particles ─────────────────────────────────
     const container = document.getElementById('hero-particles');
     const green = '#028A0F', blue = '#0284c7';
@@ -208,10 +235,6 @@
     }, { threshold: 0.5 });
     statEls.forEach(el => statsObserver.observe(el));
 
-    // ── Stop cursor blink after 4s (feels natural) ─────────
-    setTimeout(() => {
-        const cursor = document.querySelector('.cursor-blink');
-        if (cursor) { cursor.style.animation = 'none'; cursor.style.opacity = '0'; }
-    }, 4000);
+
 })();
 </script>
